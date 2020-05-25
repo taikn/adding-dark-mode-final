@@ -7,8 +7,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "serve:network": "gatsby serve -H 192.168.1.169"
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
