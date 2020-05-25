@@ -12,7 +12,7 @@ const saveSwitchMode = (switchMode) => {
     window.localStorage.setItem('switchMode', switchMode)
 }
 
-export const getSwitchMode = () => {
+const getSwitchMode = () => {
   if (typeof window === 'undefined') return undefined
   if (window.localStorage &&
       window.localStorage.getItem('switchMode')) {
@@ -21,8 +21,10 @@ export const getSwitchMode = () => {
   return 'auto'
 }
 
+export const initialSwitchMode = getSwitchMode()
+
 export default () => {
-  const [switchMode, setSwitchMode] = useState(getSwitchMode)
+  const [switchMode, setSwitchMode] = useState(initialSwitchMode)
   const { activateColorMode } = useContext(ColorModeContext)
 
   const handleSwitch = (switchMode) => {
