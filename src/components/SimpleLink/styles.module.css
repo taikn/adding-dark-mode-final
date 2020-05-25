@@ -1,0 +1,9 @@
+.simpleLink {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.simpleLink:hover {
+  text-decoration: none;
+}
+

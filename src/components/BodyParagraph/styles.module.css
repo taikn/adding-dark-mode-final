@@ -1,0 +1,4 @@
+.bodyParagraph {
+  color: var(--paragraph-color);
+  font: 1.25rem / 1.6 "Source Serif Pro", serif;
+}

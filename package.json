@@ -1,0 +1,29 @@
+{
+  "name": "adding-dark-mode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "serve:network": "gatsby serve -H 192.168.1.169"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taikn/adding-dark-mode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taikn/adding-dark-mode/issues"
+  },
+  "homepage": "https://github.com/taikn/adding-dark-mode#readme",
+  "dependencies": {
+    "gatsby": "^2.21.33",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-display: fallback;
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Serif Pro Regular"), local("Source-Serif-Pro-Regular"), url("source-serif-pro-regular.woff2") format("woff2"), url("source-serif-pro-regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Source Serif Pro Black"), local("Source-Serif-Pro-Black"), url("source-serif-pro-black.woff2") format("woff2"), url("source-serif-pro-black.woff") format("woff");
+}

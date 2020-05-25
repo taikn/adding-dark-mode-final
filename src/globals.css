@@ -1,0 +1,30 @@
+/* light mode */
+:root {
+  --background-color: #f0f0f0;
+  --heading-color: #222;
+  --paragraph-color: #333;
+}
+
+/* dark mode */
+[data-color-mode="dark"] {
+  --background-color: #333;
+  --heading-color: #f3f3f3;
+  --paragraph-color: #ccc;
+}
+
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 0.25s ease-out;
+  background-color: var(--background-color);
+  margin: 0;
+}
+
+[data-loading="true"] {
+  transition: none;
+}
