@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ColorModeContext } from '../ColorModeContext'
+import { getSwitchMode } from '../ModeControls'
 
 const determineColorMode = (switchMode) => {
   switch (switchMode) {
@@ -16,16 +17,11 @@ const determineColorMode = (switchMode) => {
   }
 }
 
-const getColorMode = () => {
-  if (typeof window === 'undefined') return undefined
-  return document.body.getAttribute('data-color-mode')
-}
-
 export default ({ children }) => {
   const [
     colorMode,
     setColorMode
-  ] = useState(getColorMode)
+  ] = useState(determineColorMode(getSwitchMode()))
 
   const activateColorMode = (switchMode) => {
     setColorMode(determineColorMode(switchMode))

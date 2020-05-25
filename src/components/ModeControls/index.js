@@ -12,7 +12,7 @@ const saveSwitchMode = (switchMode) => {
     window.localStorage.setItem('switchMode', switchMode)
 }
 
-const getSwitchMode = () => {
+export const getSwitchMode = () => {
   if (typeof window === 'undefined') return undefined
   if (window.localStorage &&
       window.localStorage.getItem('switchMode')) {
