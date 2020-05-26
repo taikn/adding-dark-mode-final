@@ -20,9 +20,8 @@
       if (storageAvailable() &&
           window.localStorage.getItem('switchMode')) {
         return window.localStorage.getItem('switchMode');
-      } else {
-        return 'auto';
       }
+      return 'auto';
     }
     const determineColorMode = (switchMode) => {
       switch (switchMode) {
