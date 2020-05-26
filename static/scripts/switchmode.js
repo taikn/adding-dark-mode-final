@@ -17,7 +17,8 @@
       }
     }
     function getSwitchMode () {
-      if (storageAvailable()) {
+      if (storageAvailable() &&
+          window.localStorage.getItem('switchMode')) {
         return window.localStorage.getItem('switchMode');
       } else {
         return 'auto';
