@@ -16,7 +16,8 @@ const saveSwitchMode = (switchMode) => {
 
 const getSwitchMode = () => {
   if (typeof window === 'undefined') return undefined
-  if (storageAvailable) {
+  if (storageAvailable &&
+      window.localStorage.getItem('switchMode')) {
     return window.localStorage.getItem('switchMode')
   } else {
     return 'auto'
