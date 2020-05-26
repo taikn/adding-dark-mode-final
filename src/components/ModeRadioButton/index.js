@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-export default ({ id, checked, children, ...rest }) => {
+export default ({ 'aria-label': ariaLabel, id, checked, children, ...rest }) => {
   const checkedIconStyles = checked
     ? styles.checkedIconWrapper
     : styles.iconWrapper
@@ -14,7 +14,11 @@ export default ({ id, checked, children, ...rest }) => {
         type='radio'
         {...rest}
       />
-      <label className={styles.radioLabel} htmlFor={id}>
+      <label
+        aria-label={ariaLabel}
+        className={styles.radioLabel}
+        htmlFor={id}
+      >
         <span className={checkedIconStyles}>
           {children}
         </span>

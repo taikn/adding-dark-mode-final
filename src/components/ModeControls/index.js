@@ -9,7 +9,7 @@ import { ColorModeContext } from '../ColorModeContext'
 const saveSwitchMode = (switchMode) => {
   if (typeof window === 'undefined') return undefined
   window.localStorage &&
-    window.localStorage.setItem('switchMode', switchMode)
+  window.localStorage.setItem('switchMode', switchMode)
 }
 
 const getSwitchMode = () => {
@@ -41,6 +41,7 @@ export default () => {
     <div className={styles.controlsContainer}>
       <ModeRadioButton
         id='daySwitchMode'
+        aria-label='Light color mode'
         name='switchMode'
         value='day'
         onChange={() => handleSwitch('day')}
@@ -50,6 +51,7 @@ export default () => {
       </ModeRadioButton>
       <ModeRadioButton
         id='autoSwitchMode'
+        aria-label='Automatic color mode'
         name='switchMode'
         value='auto'
         onChange={() => handleSwitch('auto')}
@@ -59,6 +61,7 @@ export default () => {
       </ModeRadioButton>
       <ModeRadioButton
         id='nightSwitchMode'
+        aria-label='Dark color mode'
         name='switchMode'
         value='night'
         onChange={() => handleSwitch('night')}
