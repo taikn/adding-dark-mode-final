@@ -5,20 +5,22 @@ import NightIcon from '../NightIcon'
 import AutoIcon from '../AutoIcon'
 import ModeRadioButton from '../ModeRadioButton'
 import { ColorModeContext } from '../ColorModeContext'
+import { storageAvailable } from '../../utils'
 
 const saveSwitchMode = (switchMode) => {
   if (typeof window === 'undefined') return undefined
-  window.localStorage &&
-  window.localStorage.setItem('switchMode', switchMode)
+  if (storageAvailable) {
+    window.localStorage.setItem('switchMode', switchMode)
+  }
 }
 
 const getSwitchMode = () => {
   if (typeof window === 'undefined') return undefined
-  if (window.localStorage &&
-      window.localStorage.getItem('switchMode')) {
+  if (storageAvailable) {
     return window.localStorage.getItem('switchMode')
+  } else {
+    return 'auto'
   }
-  return 'auto'
 }
 
 export const initialSwitchMode = getSwitchMode()
