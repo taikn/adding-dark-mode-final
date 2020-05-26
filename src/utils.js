@@ -15,4 +15,4 @@ const localStorageCheck = () => {
   }
 }
 
-export const storageAvailable = localStorageCheck()
+export const storageAvailable = typeof window === 'undefined' && localStorageCheck()
