@@ -1,7 +1,4 @@
 (function () {
-  function ready() {
-    alert('DOM is ready');
-  }
   function storageAvailable () {
     var x = '__storage_test__';
     try {
@@ -40,7 +37,6 @@
   function setInitColorMode () {
     document.body.setAttribute('data-color-mode',
       determineColorMode(getSwitchMode()));
-    ready();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setInitColorMode, false);
