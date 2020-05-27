@@ -35,13 +35,13 @@
         return 'light';
     }
   }
-  function initColorMode () {
+  function setInitColorMode () {
     document.body.setAttribute('data-color-mode',
       determineColorMode(getSwitchMode()));
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initColorMode, false);
+    document.addEventListener('DOMContentLoaded', setInitColorMode, false);
   } else {
-    initColorMode();
+    setInitColorMode();
   }
 })();
