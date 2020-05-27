@@ -4,8 +4,7 @@ const localStorageCheck = () => {
     window.localStorage.setItem(x, x)
     window.localStorage.removeItem(x)
     return true
-  }
-  catch (e) {
+  } catch (e) {
     return e instanceof DOMException && (
       e.code === 22 ||
       e.code === 1014 ||
