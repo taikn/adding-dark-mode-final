@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ColorModeContext } from '../ColorModeContext'
-import { initialSwitchMode } from '../ModeControls'
+import { storageAvailable } from '../../utils'
 
 const determineColorMode = (switchMode) => {
   switch (switchMode) {
@@ -17,19 +17,44 @@ const determineColorMode = (switchMode) => {
   }
 }
 
+const saveSwitchMode = (switchMode) => {
+  if (typeof window === 'undefined') return undefined
+  if (storageAvailable()) {
+    window.localStorage.setItem('switchMode', switchMode)
+  }
+}
+
+const getSwitchMode = () => {
+  if (typeof window === 'undefined') return undefined
+  if (storageAvailable() &&
+    window.localStorage.getItem('switchMode')) {
+    return window.localStorage.getItem('switchMode')
+  }
+  return 'auto'
+}
+
+const initialSwitchMode = getSwitchMode()
+
 export default ({ children }) => {
   const [
     colorMode,
     setColorMode
   ] = useState(determineColorMode(initialSwitchMode))
 
-  const activateColorMode = (switchMode) => {
+  const [
+    switchMode,
+    setSwitchMode
+  ] = useState(initialSwitchMode)
+
+  const handleSwitch = (switchMode) => {
+    saveSwitchMode(switchMode)
+    setSwitchMode(switchMode)
     setColorMode(determineColorMode(switchMode))
   }
 
   return (
     <ColorModeContext.Provider
-      value={{ colorMode, activateColorMode }}
+      value={{ colorMode, switchMode, handleSwitch }}
     >
       {children}
     </ColorModeContext.Provider>

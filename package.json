@@ -1,5 +1,5 @@
 {
-  "name": "adding-dark-mode",
+  "name": "adding-dark-mode-final",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taikn/adding-dark-mode.git"
+    "url": "git+https://github.com/taikn/adding-dark-mode-final.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/taikn/adding-dark-mode/issues"
+    "url": "https://github.com/taikn/adding-dark-mode-final/issues"
   },
-  "homepage": "https://github.com/taikn/adding-dark-mode#readme",
+  "homepage": "https://github.com/taikn/adding-dark-mode-final#readme",
   "dependencies": {
     "gatsby": "^2.22.11",
     "react": "^16.13.1",

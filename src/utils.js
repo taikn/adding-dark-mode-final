@@ -1,4 +1,5 @@
-const localStorageCheck = () => {
+export const storageAvailable = () => {
+  if (typeof window === 'undefined') return false
   const x = '__storage_test__'
   try {
     window.localStorage.setItem(x, x)
@@ -13,5 +14,3 @@ const localStorageCheck = () => {
       (window.localStorage && window.localStorage.length !== 0)
   }
 }
-
-export const storageAvailable = typeof window !== 'undefined' && localStorageCheck()

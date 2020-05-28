@@ -1,4 +1,4 @@
-(function () {
+export const initColorMode = `(function () {
   function storageAvailable () {
     var x = '__storage_test__';
     try {
@@ -38,9 +38,7 @@
     document.body.setAttribute('data-color-mode',
       determineColorMode(getSwitchMode()));
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setInitColorMode, false);
-  } else {
-    setInitColorMode();
-  }
-})();
+  setInitColorMode();
+})();`
+
+export const initColorModeCompressd = '!function(){function e(){return function(){var e="__storage_test__";try{return window.localStorage.setItem(e,e),window.localStorage.removeItem(e),1}catch(e){return e instanceof DOMException&&(22===e.code||1014===e.code||"QuotaExceededError"===e.name||"NS_ERROR_DOM_QUOTA_REACHED"===e.name)&&window.localStorage&&0!==window.localStorage.length}}()&&window.localStorage.getItem("switchMode")?window.localStorage.getItem("switchMode"):"auto"}document.body.setAttribute("data-color-mode",function(e){switch(e){case"night":return"dark";case"auto":if(window.matchMedia("(prefers-color-scheme: dark)").matches)return"dark";default:return"light"}}(e()))}();'

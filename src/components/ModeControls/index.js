@@ -1,39 +1,13 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import styles from './styles.module.css'
 import DayIcon from '../DayIcon'
 import NightIcon from '../NightIcon'
 import AutoIcon from '../AutoIcon'
 import ModeRadioButton from '../ModeRadioButton'
 import { ColorModeContext } from '../ColorModeContext'
-import { storageAvailable } from '../../utils'
-
-const saveSwitchMode = (switchMode) => {
-  if (typeof window === 'undefined') return undefined
-  if (storageAvailable) {
-    window.localStorage.setItem('switchMode', switchMode)
-  }
-}
-
-const getSwitchMode = () => {
-  if (typeof window === 'undefined') return undefined
-  if (storageAvailable &&
-      window.localStorage.getItem('switchMode')) {
-    return window.localStorage.getItem('switchMode')
-  }
-  return 'auto'
-}
-
-export const initialSwitchMode = getSwitchMode()
 
 export default () => {
-  const [switchMode, setSwitchMode] = useState(initialSwitchMode)
-  const { activateColorMode } = useContext(ColorModeContext)
-
-  const handleSwitch = (switchMode) => {
-    saveSwitchMode(switchMode)
-    setSwitchMode(switchMode)
-    activateColorMode(switchMode)
-  }
+  const { handleSwitch, switchMode } = useContext(ColorModeContext)
 
   if (!switchMode) {
     return <div className={styles.controlsContainer} />
