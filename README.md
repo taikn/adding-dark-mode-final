@@ -1,4 +1,4 @@
-# Adding dark mode on website built with Gatsby
+# Adding dark mode on a website built with Gatsby
 
 See [demo](https://confident-leavitt-dd926a.netlify.app/)
 
