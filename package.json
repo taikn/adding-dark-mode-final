@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/taikn/adding-dark-mode-final#readme",
   "dependencies": {
-    "gatsby": "^2.22.11",
+    "gatsby": "^4.25.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
